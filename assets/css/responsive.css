@@ -1,0 +1,158 @@
+/* ==========================================================
+   DEVLLOPE PORTFOLIO — RESPONSIVE RULES
+   Breakpoints: 1200 / 1024 / 900 / 768 / 560 / 380, + landscape
+   ========================================================== */
+
+/* ---------- Laptops / small desktops ---------- */
+@media (max-width:1200px){
+    .hero{ gap:44px; }
+    .profile-wrap{ width:360px; height:360px; }
+    .contact-wrap{ gap:46px; }
+}
+
+/* ---------- Tablets (landscape) ---------- */
+@media (max-width:1024px){
+    section{ padding:100px var(--container-pad); }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:calc(var(--nav-height) + 50px);
+        gap:50px;
+    }
+    .hero-left p{ margin:0 auto; }
+    .hero-buttons,.socials{ justify-content:center; }
+    .hero-right{ order:-1; }
+    .profile-wrap{ width:300px; height:300px; }
+
+    .about-container{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .contact-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .cursor-glow{ display:none; }
+}
+
+/* ---------- Tablets (portrait) / large phones ---------- */
+@media (max-width:900px){
+    .nav-links{
+        position:fixed;
+        top:0;right:0;
+        height:100vh;
+        width:min(78vw,340px);
+        background:rgba(6,6,10,.98);
+        backdrop-filter:blur(20px);
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+        padding:100px 40px;
+        gap:26px;
+        transform:translateX(100%);
+        transition:transform var(--t-med) var(--ease);
+        border-left:1px solid var(--border);
+    }
+
+    .nav-links.active{
+        transform:translateX(0);
+    }
+
+    .nav-links a{ font-size:18px; }
+    .nav-cta{ margin-left:0; margin-top:10px; }
+
+    .hamburger{ display:flex; }
+
+    .stats{ grid-template-columns:repeat(2,1fr); }
+
+    .clients-strip .logos-row{ gap:30px; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width:768px){
+    :root{ --nav-height:74px; }
+
+    section{ padding:80px var(--container-pad); }
+
+    .section-title{ margin-bottom:54px; }
+    .section-title h2{ font-size:30px; }
+
+    .navbar{ padding:16px 6%; }
+    .navbar.scrolled{ padding:12px 6%; }
+
+    .hero{ padding-top:calc(var(--nav-height) + 40px); }
+    .hero-left h1{ font-size:34px; }
+    .hero-left h2{ font-size:20px; }
+    .hero-buttons{ flex-direction:column; width:100%; }
+    .hero-buttons .btn{ width:100%; }
+    .socials{ justify-content:center; }
+
+    .profile-wrap{ width:230px; height:230px; }
+    .hero-badge{ font-size:11.5px; padding:9px 14px; right:-6px; }
+
+    .stats{ grid-template-columns:1fr 1fr; gap:14px; }
+    .stat-card{ padding:22px 14px; }
+    .stat-card h1{ font-size:32px; }
+
+    .skills-grid{ grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:12px; }
+    .skill{ padding:18px 10px; }
+
+    .projects-grid{ grid-template-columns:1fr; }
+
+    .folder-explorer{ max-width:100%; }
+
+    .gallery-grid{ grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px; }
+    .gallery-card .gallery-thumb{ height:190px; }
+
+    .case-modal,.gallery-modal .case-modal{ padding:26px 20px; max-height:90vh; }
+
+    .lightbox-nav{ width:44px; height:44px; font-size:16px; }
+    .lightbox-nav.prev{ left:8px; }
+    .lightbox-nav.next{ right:8px; }
+    .lightbox-close{ top:14px; right:14px; width:40px; height:40px; }
+    .lightbox-counter{ top:16px; left:16px; }
+
+    .form-row{ grid-template-columns:1fr; gap:16px; }
+    .form-submit{ width:100%; }
+    .form-submit .btn{ width:100%; }
+
+    .footer-top{ flex-direction:column; }
+    .footer-links{ gap:40px; }
+    .footer-bottom{ flex-direction:column; text-align:center; }
+
+    .back-to-top{ right:16px; bottom:16px; width:44px; height:44px; }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width:480px){
+    .hero-left h3{ font-size:17px; }
+    .hero-left h1{ font-size:28px; }
+    .hero-left p{ font-size:15.5px; }
+
+    .profile-wrap{ width:190px; height:190px; }
+
+    .stats{ grid-template-columns:1fr; }
+
+    .about-tags span{ font-size:12px; padding:7px 12px; }
+
+    .gallery-grid{ grid-template-columns:1fr 1fr; }
+
+    .timeline{ margin-left:4px; }
+    .timeline-item{ padding-left:30px; }
+}
+
+/* ---------- Landscape phones ---------- */
+@media (max-height:480px) and (orientation:landscape){
+    .hero{ min-height:auto; padding-top:calc(var(--nav-height) + 24px); padding-bottom:40px; }
+    .profile-wrap{ width:170px; height:170px; }
+    .scroll-cue{ display:none; }
+    .case-modal,.gallery-modal .case-modal{ max-height:94vh; }
+    .lightbox-figure img{ max-height:60vh; }
+}
+
+/* ---------- Print ---------- */
+@media print{
+    .navbar,.back-to-top,.cursor-glow,#particles-js,.progress-bar{ display:none !important; }
+}

@@ -1,0 +1,75 @@
+/* ==========================================================
+   DEVLLOPE PORTFOLIO — ANIMATIONS
+   Keyframes + reduced-motion handling.
+   ========================================================== */
+
+@keyframes float-glow{
+    0%,100%{ box-shadow:0 0 45px rgba(var(--primary-rgb),.45), 0 0 90px rgba(var(--accent-rgb),.18); transform:translateY(0); }
+    50%{ box-shadow:0 0 65px rgba(var(--primary-rgb),.6), 0 0 120px rgba(var(--accent-rgb),.3); transform:translateY(-14px); }
+}
+
+@keyframes gradient-spin{
+    0%{ background-position:0% 50%; }
+    100%{ background-position:300% 50%; }
+}
+
+@keyframes badge-bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+}
+
+@keyframes scroll-dot{
+    0%{ transform:translateY(0); opacity:1; }
+    100%{ transform:translateY(16px); opacity:0; }
+}
+
+@keyframes ripple-anim{
+    to{
+        transform:scale(3.2);
+        opacity:0;
+    }
+}
+
+@keyframes folder-open{
+    0%{ transform:rotateX(0); }
+    50%{ transform:rotateX(-18deg); }
+    100%{ transform:rotateX(0); }
+}
+
+@keyframes fade-in-up{
+    from{ opacity:0; transform:translateY(24px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes spin{
+    to{ transform:rotate(360deg); }
+}
+
+.form-status.loading::before{
+    content:"";
+    display:inline-block;
+    width:14px;height:14px;
+    border:2px solid rgba(255,255,255,.3);
+    border-top-color:currentColor;
+    border-radius:50%;
+    margin-right:8px;
+    vertical-align:-2px;
+    animation:spin .7s linear infinite;
+}
+
+/* AOS-independent gentle reveal for elements that don't use data-aos */
+.reveal{
+    animation:fade-in-up .8s var(--ease) both;
+}
+
+/* Respect user preference: cut every non-essential animation down */
+@media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+        scroll-behavior:auto !important;
+    }
+    .profile-ring{animation:none;}
+    .profile-circle{animation:none;}
+}

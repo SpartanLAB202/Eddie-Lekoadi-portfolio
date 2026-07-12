@@ -1,0 +1,68 @@
+/* ==========================================================
+   DEVLLOPE PORTFOLIO — DESIGN TOKENS
+   Single source of truth for color, type, spacing and motion.
+   ========================================================== */
+
+:root{
+
+    /* ---- Color: surfaces ---- */
+    --bg:#050505;
+    --bg-soft:#0a0a0d;
+    --card:#111111;
+    --card-hover:#151022;
+    --border:rgba(255,255,255,.08);
+    --border-strong:rgba(255,255,255,.16);
+
+    /* ---- Color: brand ---- */
+    --primary:#7B2EFF;
+    --secondary:#9D4EDD;
+    --accent:#00C2FF;
+    --primary-rgb:123,46,255;
+    --secondary-rgb:157,78,221;
+    --accent-rgb:0,194,255;
+
+    /* ---- Color: text ---- */
+    --text:#FFFFFF;
+    --text-muted:#B3B3B3;
+    --text-dim:#7a7a7a;
+
+    /* ---- Gradients ---- */
+    --gradient-brand:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 55%,var(--accent) 100%);
+    --gradient-text:linear-gradient(90deg,var(--primary),var(--accent));
+    --gradient-border:linear-gradient(135deg,var(--primary),var(--accent),var(--secondary),var(--primary));
+
+    /* ---- Typography ---- */
+    --font-heading:'Poppins',sans-serif;
+    --font-body:'Inter',sans-serif;
+    --font-button:'Montserrat',sans-serif;
+
+    /* ---- Radii ---- */
+    --radius-sm:8px;
+    --radius-md:16px;
+    --radius-lg:24px;
+    --radius-full:999px;
+
+    /* ---- Shadows / glow ---- */
+    --shadow-card:0 10px 40px rgba(0,0,0,.35);
+    --glow-primary:0 0 45px rgba(var(--primary-rgb),.35);
+    --glow-accent:0 0 45px rgba(var(--accent-rgb),.30);
+
+    /* ---- Motion ---- */
+    --ease:cubic-bezier(.16,.84,.44,1);
+    --t-fast:.25s;
+    --t-med:.4s;
+    --t-slow:.7s;
+
+    /* ---- Layout ---- */
+    --container-pad:8%;
+    --nav-height:82px;
+    --z-nav:999;
+    --z-modal:2000;
+    --z-lightbox:3000;
+}
+
+@media (max-width:768px){
+    :root{
+        --container-pad:6%;
+    }
+}
